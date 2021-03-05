@@ -264,6 +264,11 @@ if ( ! function_exists( 'deeplevel_register_required_plugins' ) ) {
 				'slug'      => 'cookie-notice',
 				'required'  => false,
 			),
+			array(
+				'name'      => 'Yoast SEO',
+				'slug'      => 'wordpress-seo',
+				'required'  => false,
+			),
 		);
 
 		$config = array(
@@ -353,3 +358,9 @@ if( !empty( $deeplevel_core_settings[ 'kama_excerpt' ] ) ) {
 		}
 	}
 }
+
+
+/**
+ * For Yoast Seo
+ */
+add_theme_support( 'title-tag' );
