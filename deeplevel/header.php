@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="<?= ( get_locale() == 'en_US' ) ? 'en' : 'ru'; ?>">
 <head>
 	<meta charset="utf-8">
 	<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
