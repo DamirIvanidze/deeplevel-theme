@@ -1,6 +1,6 @@
 <?
 /*
-Template Name: Главная
+Template Name: Home Page
 */
 
 get_header();

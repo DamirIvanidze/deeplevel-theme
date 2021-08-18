@@ -104,18 +104,10 @@ if ( ! function_exists( 'enqueue' ) ) {
 			wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/assets/js/modules/fancybox/jquery.fancybox.min.js', array( 'jquery' ), null, true );
 		}
 
-		wp_enqueue_script( 'popper_js', get_template_directory_uri() . '/assets/js/popper.min.js', array( 'jquery' ), null, true );
-		wp_enqueue_script( 'util_js', get_template_directory_uri() . '/assets/js/twbs/util.js', array( 'jquery' ), null, true );
+		wp_enqueue_script( 'bootstrap-bundle', get_template_directory_uri() . '/assets/js/bootstrap.bundle.min.js', array( 'jquery' ), null, true );
 
-		if( !empty( $deeplevel_core_settings[ 'twbs_alert' ] ) ) wp_enqueue_script( 'twbs-alert', get_template_directory_uri() . '/assets/js/twbs/alert.js', array( 'jquery' ), null, true );
-		if( !empty( $deeplevel_core_settings[ 'twbs_tab' ] ) ) wp_enqueue_script( 'twbs-tab', get_template_directory_uri() . '/assets/js/twbs/tab.js', array( 'jquery' ), null, true );
-		if( !empty( $deeplevel_core_settings[ 'twbs_collapse' ] ) ) wp_enqueue_script( 'twbs-collapse', get_template_directory_uri() . '/assets/js/twbs/collapse.js', array( 'jquery' ), null, true );
-		if( !empty( $deeplevel_core_settings[ 'twbs_dropdown' ] ) ) wp_enqueue_script( 'twbs-dropdown', get_template_directory_uri() . '/assets/js/twbs/dropdown.js', array( 'jquery' ), null, true );
-		if( !empty( $deeplevel_core_settings[ 'twbs_modal' ] ) ) wp_enqueue_script( 'twbs-modal', get_template_directory_uri() . '/assets/js/twbs/modal.js', array( 'jquery' ), null, true );
-		if( !empty( $deeplevel_core_settings[ 'twbs_toast' ] ) ) wp_enqueue_script( 'twbs-toast', get_template_directory_uri() . '/assets/js/twbs/toast.js', array( 'jquery' ), null, true );
-
-		wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/style.min.css', array(), null, 'all' );
-		wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.min.js', array( 'jquery' ), null, true );
+		wp_enqueue_style( 'style', get_template_directory_uri() . '/assets/css/style.min.css?'.time(), array(), null, 'all' );
+		wp_enqueue_script( 'script', get_template_directory_uri() . '/assets/js/script.min.js?'.time(), array( 'jquery' ), null, true );
 	}
 
 	add_action( 'wp_enqueue_scripts', 'enqueue' );
@@ -247,16 +239,6 @@ if ( ! function_exists( 'deeplevel_register_required_plugins' ) ) {
 			array(
 				'name'      => 'Better Search Replace',
 				'slug'      => 'better-search-replace',
-				'required'  => false,
-			),
-			array(
-				'name'      => 'Contact Form 7',
-				'slug'      => 'contact-form-7',
-				'required'  => false,
-			),
-			array(
-				'name'      => 'Contact Form 7 Database Addon – CFDB7',
-				'slug'      => 'contact-form-cfdb7',
 				'required'  => false,
 			),
 			array(

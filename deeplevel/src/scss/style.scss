@@ -1,14 +1,38 @@
-@import "twbs/bootstrap-reboot";
-@import "twbs/_utilities";
-@import "twbs/bootstrap-grid";
-@import "twbs/_type";
-@import "twbs/_variables";
-@import "twbs/_images";
-@import "twbs/_transitions";
-@import "twbs/_buttons";
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "twbs/_functions";
 
+// 2. Include any default variable overrides here
+$red_mod: #E5161D;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "twbs/_variables";
+@import "twbs/_mixins";
+@import "twbs/_root";
+
+// 4. Include any optional Bootstrap components as you like
+@import "twbs/_utilities";
+@import "twbs/_reboot";
+@import "twbs/_type";
+@import "twbs/_images";
+@import "twbs/_containers";
+@import "twbs/_grid";
+@import "twbs/_helpers";
+
+// 5. При желании можно в последнюю очередь включить служебный API для генерации классов на основе карты Sass в `_utililies.scss`
+@import "twbs/utilities/_api";
+
+// 6. Add additional custom code here
 @import "mix/mix";
 @import "twbs/vendor/_rfs";
+
+@import "twbs/_buttons";
+@import "twbs/_modal";
+@import "twbs/_close";
+
+
+.btn-red_mod {
+	@include button-variant($red_mod, darken($red_mod, 3%));
+}
 
 
 body {
