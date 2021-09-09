@@ -160,7 +160,7 @@ register_nav_menus( array(
 if( !empty( $deeplevel_core_settings[ 'navwalker' ] ) ) {
 	if ( ! function_exists( 'register_navwalker' ) ) {
 		function register_navwalker() {
-			require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+			require_once get_template_directory() . '/inc/bootstrap_5_wp_nav_menu_walker.php';
 		}
 
 		add_action('after_setup_theme', 'register_navwalker');
